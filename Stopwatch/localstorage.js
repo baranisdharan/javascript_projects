@@ -357,9 +357,12 @@ function onSubmit(e) {
     // Remove error after 3 seconds
     setTimeout(() => msg.remove(), 3000);
   } else {
-   
-    localStorage.setItem('Name',nameInput.value);
-    localStorage.setItem('Email',emailInput.value);
+    let details ={
+      "Name" : nameInput.value,
+      'Email': emailInput.value
+    }   
+    
+    localStorage.setItem('Details',JSON.stringify(details));
     nameInput.value = '';
     emailInput.value = '';
   }
